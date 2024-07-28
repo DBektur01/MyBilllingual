@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table align="center" cellpadding="0" cellspacing="0" width="600">
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding: 10px 8px 0">
+          <img src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkfhJRc_rNO7MH6XVUgffUk6aKTM5SRkZCeTgDn6uOyic" alt="Bilingual"/>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px">
+          <p th:text="${name}">Привет, [Имя получателя]!</p>
+          <p th:text="${title}">
+            Ваш тест [Название теста] был успешно проверен администрацией.
+          </p>
+             Click on the link to see the result
+            <a th:text="${link}">Нажмите сюда
+            </a>
+          <p>we recommend that you visit the sites below in order to improve grammar, vocabulary, listening, speaking:</p>
+          <ul>
+            <li><a href="http://www.examenglish.com/">Exam English</a></li>
+            <li><a href="https://www.englishclub.com/">English Club</a></li>
+            <li><a href="https://www.duolingo.com/">Duolingo</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#f8f8f8" align="center" style="padding: 20px 0 30px 0">
+          <p>Sincerely,<br />Bilingual Administration</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
