@@ -1,10 +1,10 @@
 package javaB13.dto.responses.questions;
 
-import com.example.bilingualb8.dto.responses.file.FileResponse;
-import com.example.bilingualb8.dto.responses.option.OptionResponse;
-import com.example.bilingualb8.enums.QuestionType;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import javaB13.dto.responses.file.FileResponse;
+import javaB13.dto.responses.option.OptionResponse;
+import javaB13.enums.QuestionType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

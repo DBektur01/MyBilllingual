@@ -47,7 +47,7 @@ public class AuthController {
 
     @Operation(summary = "This is auth with google method")
     @PostMapping("/auth-google")
-    public AuthenticationResponse authWithGoogle(String tokenId) throws FirebaseAuthException {
+    public AuthenticationResponse authWithGoogle(String tokenId) throws FirebaseAuthException, com.google.firebase.auth.FirebaseAuthException {
         return authenticationService.authWithGoogle(tokenId);
     }
 }

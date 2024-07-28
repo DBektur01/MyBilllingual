@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.select_real_english.SelectRealEnglishWordRequest;
-import com.example.bilingualb8.dto.requests.questions.select_real_english.SelectRealEnglishWordUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.SelectRealEnglishWordService;
+import  javaB13.dto.requests.questions.select_real_english.SelectRealEnglishWordRequest;
+import  javaB13.dto.requests.questions.select_real_english.SelectRealEnglishWordUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.services.questions.SelectRealEnglishWordService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

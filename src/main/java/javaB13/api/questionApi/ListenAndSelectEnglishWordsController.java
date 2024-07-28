@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.listen_and_select_english_words.ListenAndSelectEnglishWordsRequest;
-import com.example.bilingualb8.dto.requests.questions.listen_and_select_english_words.ListenAndSelectEnglishWordsUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.ListenAndSelectEnglishWordsService;
+import  javaB13.dto.requests.questions.listen_and_select_english_words.ListenAndSelectEnglishWordsRequest;
+import  javaB13.dto.requests.questions.listen_and_select_english_words.ListenAndSelectEnglishWordsUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.services.questions.ListenAndSelectEnglishWordsService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

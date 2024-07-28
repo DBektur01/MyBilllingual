@@ -1,8 +1,8 @@
 package javaB13.dto.responses.questions;
 
-import com.example.bilingualb8.dto.responses.answer.UserAnswerResponse;
-import com.example.bilingualb8.enums.AnswerStatus;
-import com.example.bilingualb8.enums.QuestionType;
+import javaB13.dto.responses.answer.UserAnswerResponse;
+import javaB13.enums.AnswerStatus;
+import javaB13.enums.QuestionType;
 import lombok.*;
 
 import java.util.List;

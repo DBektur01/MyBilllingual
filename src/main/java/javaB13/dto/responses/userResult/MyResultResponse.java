@@ -1,6 +1,7 @@
 package javaB13.dto.responses.userResult;
 
-import com.example.bilingualb8.enums.ResultStatus;
+
+import javaB13.enums.ResultStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

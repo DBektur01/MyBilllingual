@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
-import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.regions.Region;
 
 @Configuration
 @Getter
@@ -23,7 +23,7 @@ public class S3Config {
 
     @Bean
     S3Client s3Client() {
-        Region region = Region.of(REGION);
+       Region region = Region.of(REGION);
         final AwsBasicCredentials credentials =
                 AwsBasicCredentials.create(AWS_ACCESS_KEY, AWS_SECRET_KEY);
         return S3Client.builder().region(region).

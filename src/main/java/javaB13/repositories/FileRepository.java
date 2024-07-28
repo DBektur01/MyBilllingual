@@ -1,6 +1,6 @@
 package javaB13.repositories;
 
-import com.example.bilingualb8.entity.File;
+import  javaB13.entity.File;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FileRepository extends JpaRepository<File, Long> {

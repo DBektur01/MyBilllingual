@@ -1,9 +1,9 @@
 package javaB13.services.impl;
 
-import com.example.bilingualb8.entity.File;
-import com.example.bilingualb8.entity.Question;
-import com.example.bilingualb8.enums.FileType;
-import com.example.bilingualb8.services.FileService;
+import  javaB13.entity.File;
+import  javaB13.entity.Question;
+import  javaB13.enums.FileType;
+import  javaB13.services.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

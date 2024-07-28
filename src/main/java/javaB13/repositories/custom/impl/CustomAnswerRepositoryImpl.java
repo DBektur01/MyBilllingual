@@ -1,8 +1,8 @@
 package javaB13.repositories.custom.impl;
 
-import com.example.bilingualb8.dto.responses.answer.UserAnswerResponse;
-import com.example.bilingualb8.enums.AnswerStatus;
-import com.example.bilingualb8.repositories.custom.CustomAnswerRepository;
+import  javaB13.dto.responses.answer.UserAnswerResponse;
+import  javaB13.enums.AnswerStatus;
+import  javaB13.repositories.custom.CustomAnswerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

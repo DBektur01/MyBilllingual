@@ -1,6 +1,6 @@
 package javaB13.repositories;
 
-import com.example.bilingualb8.entity.Answer;
+import  javaB13.entity.Answer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AnswerRepository extends JpaRepository<Answer,Long> {

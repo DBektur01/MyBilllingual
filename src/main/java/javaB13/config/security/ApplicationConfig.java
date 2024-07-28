@@ -1,7 +1,7 @@
 package javaB13.config.security;
 
-import com.example.bilingualb8.repositories.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
+import javaB13.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,8 +1,8 @@
 package javaB13.services.questions;
 
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.dto.responses.questions.EvaluateQuestionResponse;
-import com.example.bilingualb8.dto.responses.questions.QuestionResponse;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.dto.responses.questions.EvaluateQuestionResponse;
+import  javaB13.dto.responses.questions.QuestionResponse;
 
 import java.util.List;
 

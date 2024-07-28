@@ -1,7 +1,7 @@
 package javaB13.repositories.custom;
 
-import com.example.bilingualb8.dto.responses.questions.EvaluateQuestionResponse;
-import com.example.bilingualb8.dto.responses.questions.QuestionResponse;
+import  javaB13.dto.responses.questions.EvaluateQuestionResponse;
+import  javaB13.dto.responses.questions.QuestionResponse;
 
 import java.util.List;
 import java.util.Optional;

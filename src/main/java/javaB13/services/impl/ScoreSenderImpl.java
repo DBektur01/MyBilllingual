@@ -1,15 +1,15 @@
 package javaB13.services.impl;
 
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.entity.Result;
-import com.example.bilingualb8.entity.Test;
-import com.example.bilingualb8.entity.UserInfo;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.ResultRepository;
-import com.example.bilingualb8.repositories.TestRepository;
-import com.example.bilingualb8.repositories.UserInfoRepository;
-import com.example.bilingualb8.services.EmailService;
-import com.example.bilingualb8.services.ScoreSender;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.entity.Result;
+import  javaB13.entity.Test;
+import  javaB13.entity.UserInfo;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.ResultRepository;
+import  javaB13.repositories.TestRepository;
+import  javaB13.repositories.UserInfoRepository;
+import  javaB13.services.EmailService;
+import  javaB13.services.ScoreSender;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

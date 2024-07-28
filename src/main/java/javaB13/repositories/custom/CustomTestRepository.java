@@ -1,6 +1,6 @@
 package javaB13.repositories.custom;
 
-import com.example.bilingualb8.dto.responses.test.TestResponse;
+import  javaB13.dto.responses.test.TestResponse;
 
 import java.util.List;
 import java.util.Optional;

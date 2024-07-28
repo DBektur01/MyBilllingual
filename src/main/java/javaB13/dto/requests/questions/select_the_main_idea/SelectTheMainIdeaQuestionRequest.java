@@ -1,8 +1,7 @@
 package javaB13.dto.requests.questions.select_the_main_idea;
-
-import com.example.bilingualb8.dto.requests.option.OptionRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import javaB13.dto.requests.option.OptionRequest;
 import lombok.Builder;
 import lombok.Data;
 

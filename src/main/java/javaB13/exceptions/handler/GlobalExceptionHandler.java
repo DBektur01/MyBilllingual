@@ -1,6 +1,6 @@
 package javaB13.exceptions.handler;
 
-import com.example.bilingualb8.exceptions.*;
+import  javaB13.exceptions.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;

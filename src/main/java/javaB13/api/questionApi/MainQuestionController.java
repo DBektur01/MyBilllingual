@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.dto.responses.questions.EvaluateQuestionResponse;
-import com.example.bilingualb8.dto.responses.questions.QuestionResponse;
-import com.example.bilingualb8.services.questions.MainQuestionService;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.dto.responses.questions.EvaluateQuestionResponse;
+import  javaB13.dto.responses.questions.QuestionResponse;
+import  javaB13.services.questions.MainQuestionService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

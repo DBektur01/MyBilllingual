@@ -1,15 +1,15 @@
 package javaB13.services.questions.impl;
 
-import com.example.bilingualb8.dto.requests.questions.respond_n_words.RespondNWordsQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.respond_n_words.RespondNWordsQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.entity.Question;
-import com.example.bilingualb8.entity.Test;
-import com.example.bilingualb8.enums.QuestionType;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.QuestionRepository;
-import com.example.bilingualb8.repositories.TestRepository;
-import com.example.bilingualb8.services.questions.RespondNWordsQuestionService;
+import  javaB13.dto.requests.questions.respond_n_words.RespondNWordsQuestionRequest;
+import  javaB13.dto.requests.questions.respond_n_words.RespondNWordsQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.entity.Question;
+import  javaB13.entity.Test;
+import  javaB13.enums.QuestionType;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.QuestionRepository;
+import  javaB13.repositories.TestRepository;
+import  javaB13.services.questions.RespondNWordsQuestionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

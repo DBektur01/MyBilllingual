@@ -1,13 +1,13 @@
 package javaB13.repositories.custom.impl;
 
-import com.example.bilingualb8.dto.responses.file.FileResponse;
-import com.example.bilingualb8.dto.responses.option.OptionResponse;
-import com.example.bilingualb8.dto.responses.questions.QuestionResponse;
-import com.example.bilingualb8.dto.responses.test.TestResponse;
-import com.example.bilingualb8.enums.FileType;
-import com.example.bilingualb8.enums.QuestionType;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.custom.CustomTestRepository;
+import  javaB13.dto.responses.file.FileResponse;
+import  javaB13.dto.responses.option.OptionResponse;
+import  javaB13.dto.responses.questions.QuestionResponse;
+import  javaB13.dto.responses.test.TestResponse;
+import  javaB13.enums.FileType;
+import  javaB13.enums.QuestionType;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.custom.CustomTestRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

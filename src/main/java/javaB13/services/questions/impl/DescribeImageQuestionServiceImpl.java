@@ -1,15 +1,15 @@
 package javaB13.services.questions.impl;
 
-import com.example.bilingualb8.dto.requests.questions.describe_image.DescribeImageQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.describe_image.DescribeImageQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.entity.*;
-import com.example.bilingualb8.enums.FileType;
-import com.example.bilingualb8.enums.QuestionType;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.QuestionRepository;
-import com.example.bilingualb8.repositories.TestRepository;
-import com.example.bilingualb8.services.questions.DescribeImageQuestionService;
+import  javaB13.dto.requests.questions.describe_image.DescribeImageQuestionRequest;
+import  javaB13.dto.requests.questions.describe_image.DescribeImageQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.entity.*;
+import  javaB13.enums.FileType;
+import  javaB13.enums.QuestionType;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.QuestionRepository;
+import  javaB13.repositories.TestRepository;
+import  javaB13.services.questions.DescribeImageQuestionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

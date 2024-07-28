@@ -1,7 +1,8 @@
 package javaB13.repositories;
 
-import com.example.bilingualb8.entity.User;
-import com.example.bilingualb8.entity.UserInfo;
+
+import javaB13.entity.User;
+import javaB13.entity.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

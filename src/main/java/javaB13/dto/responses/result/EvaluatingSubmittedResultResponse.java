@@ -1,7 +1,7 @@
 package javaB13.dto.responses.result;
 
-import com.example.bilingualb8.dto.responses.questions.ResultQuestionResponse;
-import com.example.bilingualb8.enums.ResultStatus;
+import javaB13.dto.responses.questions.ResultQuestionResponse;
+import javaB13.enums.ResultStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

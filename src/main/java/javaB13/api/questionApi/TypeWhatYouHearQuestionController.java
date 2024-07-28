@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.type_what_you_hear.TypeWhatYouHearQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.type_what_you_hear.TypeWhatYouHearQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.TypeWhatYouHearQuestionService;
+import  javaB13.dto.requests.questions.type_what_you_hear.TypeWhatYouHearQuestionRequest;
+import  javaB13.dto.requests.questions.type_what_you_hear.TypeWhatYouHearQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.services.questions.TypeWhatYouHearQuestionService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

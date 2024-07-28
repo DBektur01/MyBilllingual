@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.respond_n_words.RespondNWordsQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.respond_n_words.RespondNWordsQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.RespondNWordsQuestionService;
+import  javaB13.dto.requests.questions.respond_n_words.RespondNWordsQuestionRequest;
+import  javaB13.dto.requests.questions.respond_n_words.RespondNWordsQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.services.questions.RespondNWordsQuestionService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

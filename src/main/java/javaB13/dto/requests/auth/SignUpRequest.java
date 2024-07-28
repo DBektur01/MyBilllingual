@@ -1,10 +1,9 @@
 package javaB13.dto.requests.auth;
-
-import com.example.bilingualb8.validations.NameValid;
-import com.example.bilingualb8.validations.PasswordValid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import javaB13.validations.NameValid;
+import javaB13.validations.PasswordValid;
 import lombok.Builder;
 
 @Builder

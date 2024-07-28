@@ -1,16 +1,16 @@
 package javaB13.repositories.custom.impl;
 
-import com.example.bilingualb8.dto.responses.answer.UserAnswerResponse;
-import com.example.bilingualb8.dto.responses.questions.ResultQuestionResponse;
-import com.example.bilingualb8.dto.responses.result.EvaluatingSubmittedResultResponse;
-import com.example.bilingualb8.dto.responses.result.SubmittedResultsResponse;
-import com.example.bilingualb8.dto.responses.userResult.MyResultResponse;
-import com.example.bilingualb8.enums.AnswerStatus;
-import com.example.bilingualb8.enums.QuestionType;
-import com.example.bilingualb8.enums.ResultStatus;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.custom.CustomAnswerRepository;
-import com.example.bilingualb8.repositories.custom.CustomResultRepository;
+import  javaB13.dto.responses.answer.UserAnswerResponse;
+import  javaB13.dto.responses.questions.ResultQuestionResponse;
+import  javaB13.dto.responses.result.EvaluatingSubmittedResultResponse;
+import  javaB13.dto.responses.result.SubmittedResultsResponse;
+import  javaB13.dto.responses.userResult.MyResultResponse;
+import  javaB13.enums.AnswerStatus;
+import  javaB13.enums.QuestionType;
+import  javaB13.enums.ResultStatus;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.custom.CustomAnswerRepository;
+import  javaB13.repositories.custom.CustomResultRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

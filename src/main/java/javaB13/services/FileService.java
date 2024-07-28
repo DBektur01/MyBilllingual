@@ -1,7 +1,7 @@
 package javaB13.services;
 
-import com.example.bilingualb8.entity.File;
-import com.example.bilingualb8.entity.Question;
+import  javaB13.entity.File;
+import  javaB13.entity.Question;
 
 public interface FileService {
     File createAudioFile(String fileUrl, Question question);

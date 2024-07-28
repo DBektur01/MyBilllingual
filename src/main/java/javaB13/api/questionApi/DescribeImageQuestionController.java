@@ -1,11 +1,11 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.describe_image.DescribeImageQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.describe_image.DescribeImageQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.DescribeImageQuestionService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import javaB13.dto.requests.questions.describe_image.DescribeImageQuestionRequest;
+import javaB13.dto.requests.questions.describe_image.DescribeImageQuestionUpdateRequest;
+import javaB13.dto.responses.SimpleResponse;
+import javaB13.services.questions.DescribeImageQuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

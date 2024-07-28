@@ -1,14 +1,13 @@
 package javaB13.dto.requests.questions.listen_and_select_english_words;
 
-import com.example.bilingualb8.dto.requests.option.OptionRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import javaB13.dto.requests.option.OptionRequest;
 import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
-
 
 @Data
 @Builder

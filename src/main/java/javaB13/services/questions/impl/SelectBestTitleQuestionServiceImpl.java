@@ -1,19 +1,19 @@
 package javaB13.services.questions.impl;
 
-import com.example.bilingualb8.dto.requests.option.OptionRequest;
-import com.example.bilingualb8.dto.requests.option.OptionUpdateRequest;
-import com.example.bilingualb8.dto.requests.questions.select_best_title.SelectBestTitleQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.select_best_title.SelectBestTitleQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.entity.Option;
-import com.example.bilingualb8.entity.Question;
-import com.example.bilingualb8.entity.Test;
-import com.example.bilingualb8.enums.OptionType;
-import com.example.bilingualb8.enums.QuestionType;
-import com.example.bilingualb8.repositories.OptionRepository;
-import com.example.bilingualb8.repositories.QuestionRepository;
-import com.example.bilingualb8.repositories.TestRepository;
-import com.example.bilingualb8.services.questions.SelectBestTitleQuestionService;
+import  javaB13.dto.requests.option.OptionRequest;
+import  javaB13.dto.requests.option.OptionUpdateRequest;
+import  javaB13.dto.requests.questions.select_best_title.SelectBestTitleQuestionRequest;
+import  javaB13.dto.requests.questions.select_best_title.SelectBestTitleQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.entity.Option;
+import  javaB13.entity.Question;
+import  javaB13.entity.Test;
+import  javaB13.enums.OptionType;
+import  javaB13.enums.QuestionType;
+import  javaB13.repositories.OptionRepository;
+import  javaB13.repositories.QuestionRepository;
+import  javaB13.repositories.TestRepository;
+import  javaB13.services.questions.SelectBestTitleQuestionService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +37,7 @@ public class SelectBestTitleQuestionServiceImpl implements SelectBestTitleQuesti
     public SimpleResponse save(SelectBestTitleQuestionRequest request) {
         log.info("Saving Select Best Title question: {}", request.getTitle());
         Test test = testRepository.findById(request.getTestId())
-                .orElseThrow(() -> new com.example.bilingualb8.exceptions.NotFoundException(String.format("Test with ID %s doesn't exist", request.getTestId())));
+                .orElseThrow(() -> new NotFoundException(String.format("Test with ID %s doesn't exist", request.getTestId())));
 
         Question question = new Question();
         // Set question fields

@@ -1,9 +1,9 @@
 package javaB13.api.questionApi;
 
-import com.example.bilingualb8.dto.requests.questions.select_the_main_idea.SelectTheMainIdeaQuestionRequest;
-import com.example.bilingualb8.dto.requests.questions.select_the_main_idea.SelectTheMainIdeaQuestionUpdateRequest;
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.services.questions.SelectTheMainIdeaQuestionService;
+import  javaB13.dto.requests.questions.select_the_main_idea.SelectTheMainIdeaQuestionRequest;
+import  javaB13.dto.requests.questions.select_the_main_idea.SelectTheMainIdeaQuestionUpdateRequest;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.services.questions.SelectTheMainIdeaQuestionService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

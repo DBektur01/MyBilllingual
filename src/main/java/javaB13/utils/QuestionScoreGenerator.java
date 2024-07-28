@@ -1,8 +1,7 @@
 package javaB13.utils;
-
-import com.example.bilingualb8.entity.Answer;
-import com.example.bilingualb8.entity.Option;
-import com.example.bilingualb8.repositories.OptionRepository;
+import javaB13.entity.Answer;
+import javaB13.entity.Option;
+import javaB13.repositories.OptionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

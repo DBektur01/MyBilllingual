@@ -1,8 +1,8 @@
 package javaB13.repositories.custom;
 
-import com.example.bilingualb8.dto.responses.result.EvaluatingSubmittedResultResponse;
-import com.example.bilingualb8.dto.responses.result.SubmittedResultsResponse;
-import com.example.bilingualb8.dto.responses.userResult.MyResultResponse;
+import  javaB13.dto.responses.result.EvaluatingSubmittedResultResponse;
+import  javaB13.dto.responses.result.SubmittedResultsResponse;
+import  javaB13.dto.responses.userResult.MyResultResponse;
 
 import java.util.List;
 

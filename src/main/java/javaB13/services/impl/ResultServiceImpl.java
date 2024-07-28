@@ -1,15 +1,15 @@
 package javaB13.services.impl;
 
-import com.example.bilingualb8.dto.responses.SimpleResponse;
-import com.example.bilingualb8.dto.responses.result.EvaluatingSubmittedResultResponse;
-import com.example.bilingualb8.dto.responses.result.SubmittedResultsResponse;
-import com.example.bilingualb8.dto.responses.userResult.MyResultResponse;
-import com.example.bilingualb8.entity.*;
-import com.example.bilingualb8.enums.ResultStatus;
-import com.example.bilingualb8.exceptions.NotFoundException;
-import com.example.bilingualb8.repositories.ResultRepository;
-import com.example.bilingualb8.repositories.custom.CustomResultRepository;
-import com.example.bilingualb8.services.ResultService;
+import  javaB13.dto.responses.SimpleResponse;
+import  javaB13.dto.responses.result.EvaluatingSubmittedResultResponse;
+import  javaB13.dto.responses.result.SubmittedResultsResponse;
+import  javaB13.dto.responses.userResult.MyResultResponse;
+import  javaB13.entity.*;
+import  javaB13.enums.ResultStatus;
+import  javaB13.exceptions.NotFoundException;
+import  javaB13.repositories.ResultRepository;
+import  javaB13.repositories.custom.CustomResultRepository;
+import  javaB13.services.ResultService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;

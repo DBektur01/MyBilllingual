@@ -19,6 +19,6 @@ public interface AuthenticationService {
 
     SimpleResponse resetPassword(String token, String newPassword);
 
-    AuthenticationResponse authWithGoogle(String tokenId) throws FirebaseAuthException;
+    AuthenticationResponse authWithGoogle(String tokenId) throws FirebaseAuthException, com.google.firebase.auth.FirebaseAuthException;
 
 }

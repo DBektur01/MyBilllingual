@@ -1,9 +1,9 @@
 package javaB13.dto.requests.questions.select_real_english;
 
-import com.example.bilingualb8.dto.requests.option.OptionUpdateRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import javaB13.dto.requests.option.OptionUpdateRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package javaB13.services.impl;
 
-import com.example.bilingualb8.exceptions.BadRequestException;
-import com.example.bilingualb8.services.EmailService;
+import  javaB13.exceptions.BadRequestException;
+import  javaB13.services.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;

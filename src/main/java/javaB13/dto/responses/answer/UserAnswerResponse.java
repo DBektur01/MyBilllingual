@@ -1,6 +1,6 @@
 package javaB13.dto.responses.answer;
 
-import com.example.bilingualb8.enums.AnswerStatus;
+import javaB13.enums.AnswerStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

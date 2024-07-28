@@ -1,12 +1,13 @@
 package javaB13.dto.responses.questions;
 
-import com.example.bilingualb8.dto.responses.answer.UserAnswerResponse;
+import javaB13.dto.responses.answer.UserAnswerResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
 
 @Builder
 @Data
