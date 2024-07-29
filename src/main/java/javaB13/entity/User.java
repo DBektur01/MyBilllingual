@@ -1,6 +1,7 @@
 package javaB13.entity;
 
 import jakarta.persistence.*;
+import javaB13.enums.Role;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -19,6 +20,11 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String email;
+    private String password;
+    private String resetPasswordToken;
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private UserInfo userInfo;
     private Boolean isActive;

@@ -1,20 +1,20 @@
 package javaB13.services.impl;
 
-import  javaB13.config.jwt.JwtService;
-import  javaB13.dto.requests.auth.AuthenticationRequest;
-import  javaB13.dto.requests.auth.ForgotPassword;
-import  javaB13.dto.requests.auth.SignUpRequest;
-import  javaB13.dto.responses.SimpleResponse;
-import  javaB13.dto.responses.auth.AuthenticationResponse;
-import  javaB13.entity.User;
-import  javaB13.entity.UserInfo;
-import  javaB13.enums.Role;
-import  javaB13.exceptions.AlreadyExistException;
-import  javaB13.exceptions.NotFoundException;
-import  javaB13.repositories.UserInfoRepository;
-import  javaB13.repositories.UserRepository;
-import  javaB13.services.AuthenticationService;
-import  javaB13.services.EmailService;
+import javaB13.config.jwt.JwtService;
+import javaB13.dto.requests.auth.AuthenticationRequest;
+import javaB13.dto.requests.auth.ForgotPassword;
+import javaB13.dto.requests.auth.SignUpRequest;
+import javaB13.dto.responses.SimpleResponse;
+import javaB13.dto.responses.auth.AuthenticationResponse;
+import javaB13.entity.User;
+import javaB13.entity.UserInfo;
+import javaB13.enums.Role;
+import javaB13.exceptions.AlreadyExistException;
+import javaB13.exceptions.NotFoundException;
+import javaB13.repositories.UserInfoRepository;
+import javaB13.repositories.UserRepository;
+import javaB13.services.AuthenticationService;
+import javaB13.services.EmailService;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -28,12 +28,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import java.io.IOException;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -50,93 +52,113 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public AuthenticationResponse signUp(SignUpRequest signUpRequest) {
-        log.info("Signing up");
-        if (userRepository.existsByUserInfoEmail(signUpRequest.email())) {
-            throw new AlreadyExistException("Sorry, this email is already registered. Please try a different email or login to your existing account");
-        }
-        var newUserInfo = UserInfo.builder()
-                .email(signUpRequest.email())
-                .password(passwordEncoder.encode(signUpRequest.password()))
-                .role(Role.USER)
-                .build();
-
-        User newUser = new User();
-        newUser.setFirstName(signUpRequest.firstName());
-        newUser.setLastName(signUpRequest.lastName());
-        newUser.setIsActive(false);
-        newUser.setUserInfo(newUserInfo);
-        newUserInfo.setUser(newUser);
-        userRepository.save(newUser);
-
-        var jwtToken = jwtService.generateToken(newUserInfo);
-
-        log.info("Sign up successful");
-
-        return AuthenticationResponse
-                .builder()
-                .token(jwtToken)
-                .email(newUserInfo.getEmail())
-                .role(newUserInfo.getRole())
-                .build();
+        log.info("");
+        return Optional.of(signUpRequest)
+                .map(SignUpRequest::email)
+                .filter(email -> !userRepository.existsByUserInfoEmail(email))
+                .map(email -> User.builder()
+                        .firstName(signUpRequest.firstName())
+                        .lastName(signUpRequest.lastName())
+                        .email(email)
+                        .password(passwordEncoder.encode(signUpRequest.password()))
+                        .role(Role.USER)
+                        .build())
+                .map(user -> {
+                    userRepository.save(user);
+                    return user;
+                })
+                .map(user -> AuthenticationResponse.builder()
+                        .token(jwtService.generateToken((UserDetails) user))
+                        .email(user.getEmail())
+                        .role(user.getRole())
+                        .build())
+                .orElseThrow(() -> new AlreadyExistException("User with email: " + signUpRequest.email() + " already exists"));
     }
 
+    /**
+     * Method SignIn
+     * 1)-  Получение email из AuthenticationRequest...
+     * Извлекаем email из запроса аутентификации....
+     * <p>
+     * 2) - Поиск пользователя по email:
+     * Ищем пользователя по email в репозитории.
+     * Используем flatMap, так как findUserInfoByEmail
+     * возвращает Optional<User>
+     * <p>
+     * 3) -  Аутентифицируем пользователя с помощью authenticationManager.
+     * Если аутентификация успешна, возвращаем пользователя..
+     * <p>
+     * 4) - Генерация JWT токена и формирование ответа:
+     * Генерируем JWT токен для пользователя и формируем ответ с токеном, email и ролью.
+     * <p>
+     * 5) - Обработка отсутствия пользователя:
+     * Если пользователь не найден, выбрасываем исключение NotFoundException.
+     */
     @Override
     public AuthenticationResponse signIn(AuthenticationRequest authenticationRequest) {
-        log.info("Signing in");
-        var user = userRepository.findUserInfoByEmail(authenticationRequest.email())
+        return Optional.of(authenticationRequest)
+                .map(AuthenticationRequest::email)
+                .flatMap(userRepository::findUserInfoByEmail)
+                .map(user -> {
+                    authenticationManager.authenticate(
+                            new UsernamePasswordAuthenticationToken(
+                                    authenticationRequest.email(),
+                                    authenticationRequest.password()
+                            )
+                    );
+                    return user;
+                })
+                .map(user -> {
+                    String jwtToken = jwtService.generateToken(user);
+                    return AuthenticationResponse.builder()
+                            .token(jwtToken)
+                            .email(user.getUsername())
+                            .role(user.getRole())
+                            .build();
+                })
                 .orElseThrow(() -> new NotFoundException("User was not found."));
-
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        authenticationRequest.email(),
-                        authenticationRequest.password()
-                )
-        );
-
-        var jwtToken = jwtService.generateToken(user);
-
-        log.info("Sign in successful");
-
-        return AuthenticationResponse
-                .builder()
-                .token(jwtToken)
-                .email(user.getUsername())
-                .role(user.getRole())
-                .build();
     }
 
+    /**
+     * 1) - Поиск пользователя по email или выброс исключения...
+     * 2) - Генерация токена и обновление пользователя...
+     * 3) - Формирование и отправка письма...
+     */
     @Override
     public SimpleResponse forgotPassword(ForgotPassword forgotPassword) {
         log.info("Initiating password reset");
+
         UserInfo userInfo = userRepository.findUserInfoByEmail(forgotPassword.email())
                 .orElseThrow(() -> new NotFoundException("User was not found"));
+
+        String token = UUID.randomUUID().toString();
+        userInfo.setResetPasswordToken(token);
+        userInfoRepository.save(userInfo);
+
+        String resetPasswordLink = "http://localhost:8080/api/auth/reset-password?token=" + token;
+        Context context = new Context();
+        context.setVariable("title", "Password Reset");
+        context.setVariable("message", "Hello Nuriza");
+        context.setVariable("token", resetPasswordLink);
+        context.setVariable("tokenTitle", "Reset Password");
+
+        String htmlContent = templateEngine.process("reset-password-template.html", context);
+
         try {
-            String token = UUID.randomUUID().toString();
-            userInfo.setResetPasswordToken(token);
-            userInfoRepository.save(userInfo);
-
-            String subject = "Password Reset Request";
-            String resetPasswordLink = "http://localhost:8080/api/auth/reset-password?token=" + token;
-
-            Context context = new Context();
-            context.setVariable("title", "Password Reset");
-            context.setVariable("message", "Hello Nuriza");
-            context.setVariable("token", resetPasswordLink);
-            context.setVariable("tokenTitle", "Reset Password");
-
-            String htmlContent = templateEngine.process("reset-password-template.html", context);
-
-            emailService.sendEmail(forgotPassword.email(), subject, htmlContent);
+            emailService.sendEmail(forgotPassword.email(), "Password Reset Request", htmlContent);
             log.info("Password reset email sent");
 
             return SimpleResponse.builder()
                     .message("The password reset was sent to your email. Please check your email.")
                     .build();
         } catch (MessagingException e) {
-            e.printStackTrace();
+            log.error("Error sending password reset email", e);
+            return SimpleResponse.builder()
+                    .message("Failed to send password reset email. Please try again.")
+                    .build();
         }
-        return null;
     }
+
 
     @Override
     public SimpleResponse resetPassword(String token, String newPassword) {
